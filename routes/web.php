@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('halo', function () {
+	return "Halo, Selamat datang di tutorial laravel www.malasngoding.com";
+});
