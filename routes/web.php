@@ -11,6 +11,7 @@
 |
 */
 
+/*
 use Illuminate\Database\Connection;
 
 Route::get('/', function () {
@@ -25,8 +26,8 @@ Route::get('/', function () {
 
     return view('welcome');
 });
+*/
 
-/*
 Route::get('/', function () {
     return view('welcome');
 });
@@ -49,4 +50,3 @@ Route::get('/blog/tentang', 'BlogController@tentang');
 Route::get('/blog/kontak', 'BlogController@kontak');
 
 Route::get('/pegawai','PegawaiController@index');
-*/
