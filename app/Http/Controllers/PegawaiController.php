@@ -7,11 +7,30 @@ use Illuminate\Support\Facades\DB;
 
 class PegawaiController extends Controller
 {
-    public function index(){
+    public function index() {
         // mengambil data dari table pegawai
     	$pegawai = DB::table('pegawai')->get();
  
     	// mengirim data pegawai ke view index
     	return view('index',['pegawai' => $pegawai]);
+    }
+
+    public function tambah() {
+        // memanggil view tambah
+        //return view('tambah');
+        return "Halo, Selamat datang di tutorial laravel www.malasngoding.com";    
+    }
+
+    public function store(Request $request) {
+        // insert data ke table pegawai
+        DB::table('pegawai')->insert([
+            'pegawai_nama' => $request->nama,
+            'pegawai_jabatan' => $request->jabatan,
+            'pegawai_umur' => $request->umur,
+            'pegawai_alamat' => $request->alamat
+        ]);
+        // alihkan halaman ke halaman pegawai
+        return redirect('/pegawai');
+    
     }
 }
